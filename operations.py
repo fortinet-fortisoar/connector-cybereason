@@ -8,7 +8,6 @@ import arrow
 import jmespath
 
 logger = get_logger('Cybereason')
-logger.setLevel(logging.DEBUG)# Comment for prod
 
 class CybereasonMC(object):
     def __init__(self, config):
