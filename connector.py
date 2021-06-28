@@ -12,8 +12,8 @@ class Cybereason(Connector):
             operation = operations.get(operation)
             return operation(config, params)
         except Exception as err:
-            logger.error('Cybereason:{}'.format(err))
-            raise ConnectorError('Cybereason:{}'.format(err))
+            logger.error('An exception occurred: {}'.format(err))
+            raise ConnectorError('An exception occurred: {}'.format(err))
 
 
     def check_health(self, config):
