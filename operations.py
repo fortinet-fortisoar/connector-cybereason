@@ -275,19 +275,3 @@ def _check_health(config):
         logger.exception('Health Check Error:{}'.format(Err))
         raise ConnectorError('Health Check Error:{}'.format(Err))    
 
-operations = {
-    'get_sensors': _run_operation,
-    'get_malops': _run_operation,
-    'query_user': _run_operation,
-    'query_file': _run_operation,
-    'query_process': _run_operation,
-    'isolate_sensor_by_pylum_id': _run_operation,
-    'unisolate_sensor_by_pylum_id': _run_operation,
-    'isolate_sensor_by_ip': _run_operation,
-    'unisolate_sensor_by_ip': _run_operation,
-    'kill_process': _run_operation,
-    'blacklist_file':_run_operation,
-    'whitelist_file':_run_operation,
-    'blacklist_ip_or_domain':_run_operation,
-    'whitelist_ip_or_domain':_run_operation
-}

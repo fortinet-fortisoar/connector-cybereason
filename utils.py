@@ -3,7 +3,7 @@ import json
 import copy
 import validators
 
-logger = get_logger('cybereason')
+logger = get_logger('Cybereason')
 
 # Global var
 DEFAULT_LIMIT = 100

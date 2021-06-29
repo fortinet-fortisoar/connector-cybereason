@@ -60,7 +60,119 @@
             "category": "investigation",
             "annotation": "get_sensors",
             "output_schema":
-            {},
+            {
+                "status": "",
+                "data":
+                {
+                    "totalResults": "",
+                    "sensorsStatus":
+                    {
+                        "onlineCount": "",
+                        "offlineCount": "",
+                        "staleCount": "",
+                        "archivedCount": "",
+                        "turnedOnCount": "",
+                        "turnedOffCount": "",
+                        "suspendedCount": "",
+                        "advancedCount": "",
+                        "outdatedCount": "",
+                        "serviceErrorCount": ""
+                    },
+                    "sensors":
+                    [
+                        {
+                            "sensorId": "",
+                            "pylumId": "",
+                            "guid": "",
+                            "fqdn": "",
+                            "machineName": "",
+                            "internalIpAddress": "",
+                            "externalIpAddress": "",
+                            "siteName": "",
+                            "siteId": "",
+                            "ransomwareStatus": "",
+                            "preventionStatus": "",
+                            "isolated": "",
+                            "disconnectionTime": "",
+                            "lastPylumInfoMsgUpdateTime": "",
+                            "status": "",
+                            "serviceStatus": "",
+                            "onlineTimeMS": "",
+                            "offlineTimeMS": "",
+                            "staleTimeMS": "",
+                            "archiveTimeMs": null,
+                            "statusTimeMS": "",
+                            "lastStatusAction": "",
+                            "archivedOrUnarchiveComment": "",
+                            "sensorArchivedByUser": "",
+                            "serverName": "",
+                            "serverId": "",
+                            "serverIp": "",
+                            "privateServerIp": "",
+                            "osType": "",
+                            "osVersionType": "",
+                            "collectionStatus": "",
+                            "version": "",
+                            "consoleVersion": null,
+                            "firstSeenTime": "",
+                            "upTime": "",
+                            "cpuUsage": "",
+                            "memoryUsage": "",
+                            "outdated": "",
+                            "amStatus": "",
+                            "amModeOrigin": null,
+                            "avDbVersion": "",
+                            "avDbLastUpdateTime": "",
+                            "powerShellStatus": "",
+                            "remoteShellStatus": "",
+                            "usbStatus": "",
+                            "fwStatus": "",
+                            "antiExploitStatus": "",
+                            "organizationalUnit": "",
+                            "antiMalwareStatus": "",
+                            "antiMalwareModeOrigin": null,
+                            "organization": "",
+                            "proxyAddress": "",
+                            "preventionError": "",
+                            "exitReason": "",
+                            "actionsInProgress": "",
+                            "pendingActions":
+                            [],
+                            "lastUpgradeResult": "",
+                            "department": null,
+                            "location": null,
+                            "criticalAsset": null,
+                            "deviceType": null,
+                            "customTags": null,
+                            "lastUpgradeSteps":
+                            [],
+                            "disconnected": "",
+                            "staticAnalysisDetectMode": "",
+                            "staticAnalysisDetectModeOrigin": null,
+                            "staticAnalysisPreventMode": "",
+                            "staticAnalysisPreventModeOrigin": null,
+                            "collectionComponents":
+                            [
+                                "DPI",
+                                "Metadata",
+                                "File Events"
+                            ],
+                            "sensorLastUpdate": "",
+                            "fullScanStatus": "",
+                            "quickScanStatus": "",
+                            "lastFullScheduleScanSuccessTime": "",
+                            "lastQuickScheduleScanSuccessTime": "",
+                            "policyName": "",
+                            "deliveryTime": "",
+                            "policyId": "",
+                            "compliance": "",
+                            "groupId": null,
+                            "groupName": ""
+                        }
+                    ],
+                    "hasMoreResults": true
+                }
+            },
             "enabled": true,
             "parameters":
             [
@@ -141,7 +253,7 @@
                     "value": "",
                     "description": "Filter by the LAN IP address of the machine"
                 },
-                                {
+                {
                     "title": "Custom Tags",
                     "required": false,
                     "editable": true,
@@ -180,7 +292,361 @@
             "category": "investigation",
             "annotation": "get_malops",
             "output_schema":
-            {},
+            {
+                "data":
+                {
+                    "resultIdToElementDataMap":
+                    {
+                        "11.5133381726858807240":
+                        {
+                            "simpleValues":
+                            {
+                                "hasRansomwareSuspendedProcesses":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "decisionFeature":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "rootCauseElementCompanyProduct":
+                                {
+                                    "totalValues": "",
+                                    "values": null
+                                },
+                                "malopStartTime":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "detectionType":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "malopActivityTypes":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "elementDisplayName":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "creationTime":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "isBlocked":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "rootCauseElementTypes":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "rootCauseElementNames":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "malopLastUpdateTime":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "allRansomwareProcessesSuspended":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "rootCauseElementHashes":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "managementStatus":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "closeTime":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    [
+                                        null
+                                    ]
+                                },
+                                "closerName":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    [
+                                        null
+                                    ]
+                                },
+                                "customClassification":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                }
+                            },
+                            "elementValues":
+                            {
+                                "affectedUsers":
+                                {
+                                    "totalValues": "",
+                                    "elementValues":
+                                    [
+                                        {
+                                            "elementType": "",
+                                            "guid": "",
+                                            "name": "",
+                                            "hasSuspicions": "",
+                                            "hasMalops": false
+                                        }
+                                    ],
+                                    "totalSuspicious": "",
+                                    "totalMalicious": ""
+                                },
+                                "affectedMachines":
+                                {
+                                    "totalValues": "",
+                                    "elementValues":
+                                    [
+                                        {
+                                            "elementType": "",
+                                            "guid": "",
+                                            "name": "",
+                                            "hasSuspicions": "",
+                                            "hasMalops": false
+                                        }
+                                    ],
+                                    "totalSuspicious": "",
+                                    "totalMalicious": ""
+                                }
+                            },
+                            "suspicions": null,
+                            "filterData":
+                            {
+                                "sortInGroupValue": "",
+                                "groupByValue": ""
+                            },
+                            "isMalicious": "",
+                            "suspicionCount": "",
+                            "guidString": "",
+                            "labelsIds": null,
+                            "malopPriority": null
+                        },
+                        "11.-3698575578138794465":
+                        {
+                            "simpleValues":
+                            {
+                                "hasRansomwareSuspendedProcesses":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "decisionFeature":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "detectionType":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "malopActivityTypes":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "elementDisplayName":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "creationTime":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "isBlocked":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "rootCauseElementTypes":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "malopStartTime":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "rootCauseElementNames":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "malopLastUpdateTime":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "allRansomwareProcessesSuspended":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "managementStatus":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                },
+                                "closeTime":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    [
+                                        null
+                                    ]
+                                },
+                                "closerName":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    [
+                                        null
+                                    ]
+                                },
+                                "customClassification":
+                                {
+                                    "totalValues": "",
+                                    "values":
+                                    []
+                                }
+                            },
+                            "elementValues":
+                            {
+                                "affectedUsers":
+                                {
+                                    "totalValues": "",
+                                    "elementValues":
+                                    [
+                                        {
+                                            "elementType": "",
+                                            "guid": "",
+                                            "name": "",
+                                            "hasSuspicions": "",
+                                            "hasMalops": false
+                                        }
+                                    ],
+                                    "totalSuspicious": "",
+                                    "totalMalicious": ""
+                                },
+                                "affectedMachines":
+                                {
+                                    "totalValues": "",
+                                    "elementValues":
+                                    [
+                                        {
+                                            "elementType": "",
+                                            "guid": "",
+                                            "name": null,
+                                            "hasSuspicions": "",
+                                            "hasMalops": false
+                                        }
+                                    ],
+                                    "totalSuspicious": "",
+                                    "totalMalicious": ""
+                                }
+                            },
+                            "suspicions": null,
+                            "filterData":
+                            {
+                                "sortInGroupValue": "",
+                                "groupByValue": ""
+                            },
+                            "isMalicious": "",
+                            "suspicionCount": "",
+                            "guidString": "",
+                            "labelsIds":
+                            [],
+                            "malopPriority": null
+                        }
+                    },
+                    "suspicionsMap":
+                    {},
+                    "evidenceMap":
+                    {},
+                    "totalPossibleResults": "",
+                    "queryLimits":
+                    {
+                        "totalResultLimit": "",
+                        "perGroupLimit": "",
+                        "perFeatureLimit": "",
+                        "groupingFeature":
+                        {
+                            "elementInstanceType": "",
+                            "featureName": ""
+                        },
+                        "sortInGroupFeature": null
+                    },
+                    "queryTerminated": "",
+                    "pathResultCounts":
+                    [
+                        {
+                            "featureDescriptor":
+                            {
+                                "elementInstanceType": "",
+                                "featureName": null
+                            },
+                            "count": ""
+                        }
+                    ]
+                },
+                "status": "",
+                "message": ""
+            },
             "enabled": true,
             "parameters":
             [
@@ -224,7 +690,143 @@
             ],
             "category": "investigation",
             "output_schema":
-            {}
+            {
+                "operation": null,
+                "status": "",
+                "message": "",
+                "data":
+                {
+                    "status": "",
+                    "data":
+                    {
+                        "data":
+                        {
+                            "resultIdToElementDataMap":
+                            {
+                                "0.8590481712069380305":
+                                {
+                                    "simpleValues":
+                                    {
+                                        "isLocalSystem":
+                                        {
+                                            "totalValues": "",
+                                            "values":
+                                            []
+                                        },
+                                        "domain":
+                                        {
+                                            "totalValues": "",
+                                            "values":
+                                            []
+                                        },
+                                        "ownerOrganization.name":
+                                        {
+                                            "totalValues": "",
+                                            "values":
+                                            []
+                                        },
+                                        "elementDisplayName":
+                                        {
+                                            "totalValues": "",
+                                            "values":
+                                            []
+                                        }
+                                    },
+                                    "elementValues":
+                                    {
+                                        "ownerMachine":
+                                        {
+                                            "totalValues": "",
+                                            "elementValues":
+                                            [
+                                                {
+                                                    "elementType": "",
+                                                    "guid": "",
+                                                    "name": "",
+                                                    "hasSuspicions": "",
+                                                    "hasMalops": false
+                                                }
+                                            ],
+                                            "totalSuspicious": "",
+                                            "totalMalicious": "",
+                                            "guessedTotal": ""
+                                        },
+                                        "ownerOrganization":
+                                        {
+                                            "totalValues": "",
+                                            "elementValues":
+                                            [
+                                                {
+                                                    "elementType": "",
+                                                    "guid": "",
+                                                    "name": "",
+                                                    "hasSuspicions": "",
+                                                    "hasMalops": false
+                                                }
+                                            ],
+                                            "totalSuspicious": "",
+                                            "totalMalicious": "",
+                                            "guessedTotal": ""
+                                        }
+                                    },
+                                    "suspicions":
+                                    {},
+                                    "filterData":
+                                    {
+                                        "sortInGroupValue": "",
+                                        "groupByValue": ""
+                                    },
+                                    "isMalicious": "",
+                                    "suspicionCount": "",
+                                    "guidString": "",
+                                    "labelsIds": null,
+                                    "malopPriority": null,
+                                    "malicious": "",
+                                    "suspect": false
+                                }
+                            },
+                            "suspicionsMap":
+                            {},
+                            "evidenceMap":
+                            {},
+                            "totalPossibleResults": "",
+                            "guessedPossibleResults": "",
+                            "queryLimits":
+                            {
+                                "totalResultLimit": "",
+                                "perGroupLimit": "",
+                                "perFeatureLimit": "",
+                                "groupingFeature":
+                                {
+                                    "elementInstanceType": "",
+                                    "featureName": ""
+                                },
+                                "sortInGroupFeature": null
+                            },
+                            "queryTerminated": "",
+                            "pathResultCounts":
+                            [
+                                {
+                                    "featureDescriptor":
+                                    {
+                                        "elementInstanceType": "",
+                                        "featureName": null
+                                    },
+                                    "count": ""
+                                }
+                            ],
+                            "guids":
+                            []
+                        },
+                        "status": "",
+                        "message": ""
+                    }
+                },
+                "env":
+                {},
+                "_status": "",
+                "request_id": null
+            }
         },
         {
             "operation": "query_file",
@@ -246,7 +848,191 @@
             ],
             "category": "investigation",
             "output_schema":
-            {}
+            {
+                "status": "SUCCESS",
+                "data":
+                {
+                    "data":
+                    {
+                        "resultIdToElementDataMap":
+                        {
+                            "999714480.6273931382246229895":
+                            {
+                                "simpleValues":
+                                {
+                                    "size":
+                                    {
+                                        "totalValues": 1,
+                                        "values":
+                                        []
+                                    },
+                                    "sha1String":
+                                    {
+                                        "totalValues": 1,
+                                        "values":
+                                        []
+                                    },
+                                    "isSigned":
+                                    {
+                                        "totalValues": 1,
+                                        "values":
+                                        []
+                                    },
+                                    "modifiedTime":
+                                    {
+                                        "totalValues": 1,
+                                        "values":
+                                        []
+                                    },
+                                    "maliciousClassificationType":
+                                    {
+                                        "totalValues": 1,
+                                        "values":
+                                        []
+                                    },
+                                    "md5String":
+                                    {
+                                        "totalValues": 1,
+                                        "values":
+                                        []
+                                    },
+                                    "signatureVerified":
+                                    {
+                                        "totalValues": 1,
+                                        "values":
+                                        []
+                                    },
+                                    "createdTime":
+                                    {
+                                        "totalValues": 1,
+                                        "values":
+                                        []
+                                    },
+                                    "elementDisplayName":
+                                    {
+                                        "totalValues": 1,
+                                        "values":
+                                        []
+                                    },
+                                    "correctedPath":
+                                    {
+                                        "totalValues": 1,
+                                        "values":
+                                        []
+                                    }
+                                },
+                                "elementValues":
+                                {
+                                    "ownerMachine":
+                                    {
+                                        "totalValues": 1,
+                                        "elementValues":
+                                        [
+                                            {
+                                                "elementType": "Machine",
+                                                "guid": "",
+                                                "name": "",
+                                                "hasSuspicions": "",
+                                                "hasMalops": false
+                                            }
+                                        ],
+                                        "totalSuspicious": 0,
+                                        "totalMalicious": 0,
+                                        "guessedTotal": 0
+                                    }
+                                },
+                                "suspicions":
+                                {
+                                    "attemptExecutionProcessSuspicion": 1617156028305,
+                                    "blackListedFileSuspicion": 1617155857979,
+                                    "reportedByAntiMalwareSuspicion": 1617155857979
+                                },
+                                "filterData":
+                                {
+                                    "sortInGroupValue": "",
+                                    "groupByValue": ""
+                                },
+                                "isMalicious": "",
+                                "suspicionCount": 3,
+                                "guidString": "",
+                                "labelsIds": null,
+                                "malopPriority": null,
+                                "malicious": "",
+                                "suspect": true
+                            }
+                        },
+                        "suspicionsMap":
+                        {
+                            "attemptExecutionProcessSuspicion":
+                            {
+                                "potentialEvidence":
+                                [],
+                                "firstTimestamp": "",
+                                "totalSuspicions": 0
+                            },
+                            "blackListedFileSuspicion":
+                            {
+                                "potentialEvidence":
+                                [],
+                                "firstTimestamp": 0,
+                                "totalSuspicions": 0
+                            },
+                            "fileReputationSuspicion":
+                            {
+                                "potentialEvidence":
+                                [
+                                    "malwareClassificationEvidence",
+                                    "hackingToolClassificationEvidence",
+                                    "unwantedClassificationEvidence",
+                                    "maliciousToolClassificationEvidence",
+                                    "ransomwareClassificationEvidence"
+                                ],
+                                "firstTimestamp": 0,
+                                "totalSuspicions": 1
+                            },
+                            "reportedByAntiMalwareSuspicion":
+                            {
+                                "potentialEvidence":
+                                [],
+                                "firstTimestamp": 0,
+                                "totalSuspicions": 0
+                            }
+                        },
+                        "evidenceMap":
+                        {},
+                        "totalPossibleResults": 0,
+                        "guessedPossibleResults": 0,
+                        "queryLimits":
+                        {
+                            "totalResultLimit": 200,
+                            "perGroupLimit": 100,
+                            "perFeatureLimit": 100,
+                            "groupingFeature":
+                            {
+                                "elementInstanceType": "File",
+                                "featureName": "fileHash"
+                            },
+                            "sortInGroupFeature": null
+                        },
+                        "queryTerminated": "",
+                        "pathResultCounts":
+                        [
+                            {
+                                "featureDescriptor":
+                                {
+                                    "elementInstanceType": "File",
+                                    "featureName": null
+                                },
+                                "count": 10
+                            }
+                        ],
+                        "guids":
+                        []
+                    },
+                    "status": "SUCCESS",
+                    "message": ""
+                }
+            }
         },
         {
             "operation": "query_process",
@@ -319,20 +1105,213 @@
                     "type": "checkbox",
                     "name": "filter.hasModuleFromTempEvidence"
                 },
-                                {
+                {
                     "title": "Custom Filters",
                     "required": false,
                     "editable": true,
                     "visible": true,
                     "type": "text",
                     "name": "raw_filters",
-                    "placeholder": "{\"facetName\": \"hasOutgoingConnection\", \"values\": [true]}",
+                    "placeholder": "{\"facetName\": \"hasOutgoingConnection\", \"values\":[true]}",
                     "description": "A comma separated list of filters, check documentation at https://nest.cybereason.com/documentation/api-documentation/all-versions/query-elements-and-features"
                 }
             ],
             "category": "remediation",
             "output_schema":
-            {}
+            {
+                "operation": null,
+                "status": "",
+                "message": "",
+                "data":
+                {
+                    "status": "",
+                    "data":
+                    {
+                        "data":
+                        {
+                            "resultIdToElementDataMap":
+                            {
+                                "2004875000.-1113617031756370169":
+                                {
+                                    "simpleValues":
+                                    {
+                                        "commandLine":
+                                        {
+                                            "totalValues": "",
+                                            "values":
+                                            []
+                                        },
+                                        "creationTime":
+                                        {
+                                            "totalValues": "",
+                                            "values":
+                                            []
+                                        },
+                                        "endTime":
+                                        {
+                                            "totalValues": "",
+                                            "values":
+                                            []
+                                        },
+                                        "executionPrevented":
+                                        {
+                                            "totalValues": "",
+                                            "values":
+                                            []
+                                        },
+                                        "elementDisplayName":
+                                        {
+                                            "totalValues": "",
+                                            "values":
+                                            []
+                                        }
+                                    },
+                                    "elementValues":
+                                    {
+                                        "calculatedUser":
+                                        {
+                                            "totalValues": "",
+                                            "elementValues":
+                                            [
+                                                {
+                                                    "elementType": "",
+                                                    "guid": "",
+                                                    "name": "",
+                                                    "hasSuspicions": "",
+                                                    "hasMalops": false
+                                                }
+                                            ],
+                                            "totalSuspicious": "",
+                                            "totalMalicious": "",
+                                            "guessedTotal": ""
+                                        },
+                                        "ownerMachine":
+                                        {
+                                            "totalValues": "",
+                                            "elementValues":
+                                            [
+                                                {
+                                                    "elementType": "",
+                                                    "guid": "",
+                                                    "name": "",
+                                                    "hasSuspicions": "",
+                                                    "hasMalops": false
+                                                }
+                                            ],
+                                            "totalSuspicious": "",
+                                            "totalMalicious": "",
+                                            "guessedTotal": ""
+                                        },
+                                        "parentProcess":
+                                        {
+                                            "totalValues": "",
+                                            "elementValues":
+                                            [
+                                                {
+                                                    "elementType": "",
+                                                    "guid": "",
+                                                    "name": "",
+                                                    "hasSuspicions": "",
+                                                    "hasMalops": false
+                                                }
+                                            ],
+                                            "totalSuspicious": "",
+                                            "totalMalicious": "",
+                                            "guessedTotal": ""
+                                        }
+                                    },
+                                    "suspicions":
+                                    {
+                                        "blackListModuleSuspicion": "",
+                                        "shellcodeInProcessSuspicion": "",
+                                        "meterpreterX86executableSuspicion": "",
+                                        "blackListFileSuspicion": ""
+                                    },
+                                    "filterData":
+                                    {
+                                        "sortInGroupValue": "",
+                                        "groupByValue": ""
+                                    },
+                                    "isMalicious": "",
+                                    "suspicionCount": "",
+                                    "guidString": "",
+                                    "labelsIds": null,
+                                    "malopPriority": null,
+                                    "malicious": "",
+                                    "suspect": true
+                                }
+                            },
+                            "suspicionsMap":
+                            {
+                                "blackListModuleSuspicion":
+                                {
+                                    "potentialEvidence":
+                                    [],
+                                    "firstTimestamp": "",
+                                    "totalSuspicions": ""
+                                },
+                                "shellcodeInProcessSuspicion":
+                                {
+                                    "potentialEvidence":
+                                    [],
+                                    "firstTimestamp": "",
+                                    "totalSuspicions": ""
+                                },
+                                "meterpreterX86executableSuspicion":
+                                {
+                                    "potentialEvidence":
+                                    [],
+                                    "firstTimestamp": "",
+                                    "totalSuspicions": ""
+                                },
+                                "blackListFileSuspicion":
+                                {
+                                    "potentialEvidence":
+                                    [],
+                                    "firstTimestamp": "",
+                                    "totalSuspicions": ""
+                                }
+                            },
+                            "evidenceMap":
+                            {},
+                            "totalPossibleResults": "",
+                            "guessedPossibleResults": "",
+                            "queryLimits":
+                            {
+                                "totalResultLimit": "",
+                                "perGroupLimit": "",
+                                "perFeatureLimit": "",
+                                "groupingFeature":
+                                {
+                                    "elementInstanceType": "",
+                                    "featureName": ""
+                                },
+                                "sortInGroupFeature": null
+                            },
+                            "queryTerminated": "",
+                            "pathResultCounts":
+                            [
+                                {
+                                    "featureDescriptor":
+                                    {
+                                        "elementInstanceType": "",
+                                        "featureName": null
+                                    },
+                                    "count": ""
+                                }
+                            ],
+                            "guids":
+                            []
+                        },
+                        "status": "",
+                        "message": ""
+                    }
+                },
+                "env":
+                {},
+                "_status": "",
+                "request_id": null
+            }
         },
         {
             "operation": "isolate_sensor_by_pylum_id",
@@ -356,7 +1335,13 @@
             ],
             "category": "remediation",
             "output_schema":
-            {}
+            {
+                "status": "Success",
+                "data":
+                {
+                    "PYLUMID": "Succeeded"
+                }
+            }
         },
         {
             "operation": "unisolate_sensor_by_pylum_id",
@@ -380,7 +1365,13 @@
             ],
             "category": "remediation",
             "output_schema":
-            {}
+            {
+                "status": "Success",
+                "data":
+                {
+                    "PYLUMID": "Succeeded"
+                }
+            }
         },
         {
             "operation": "isolate_sensor_by_ip",
@@ -404,7 +1395,13 @@
             ],
             "category": "remediation",
             "output_schema":
-            {}
+            {
+                "status": "Success",
+                "data":
+                {
+                    "PYLUMID": "Succeeded"
+                }
+            }
         },
         {
             "operation": "unisolate_sensor_by_ip",
@@ -428,7 +1425,13 @@
             ],
             "category": "remediation",
             "output_schema":
-            {}
+            {
+                "status": "Success",
+                "data":
+                {
+                    "PYLUMID": "Succeeded"
+                }
+            }
         },
         {
             "operation": "kill_process",
@@ -461,7 +1464,28 @@
             ],
             "category": "remediation",
             "output_schema":
-            {}
+            {
+                "status": "",
+                "data":
+                {
+                    "malopId": "",
+                    "remediationId": "",
+                    "start": "",
+                    "end": "",
+                    "initiatingUser": "",
+                    "statusLog":
+                    [
+                        {
+                            "machineId": "",
+                            "targetId": "",
+                            "status": "",
+                            "actionType": "",
+                            "error": "",
+                            "timestamp": ""
+                        }
+                    ]
+                }
+            }
         },
         {
             "operation": "blacklist_file",
@@ -482,15 +1506,15 @@
                     "name": "keys"
                 },
                 {
-                   "title":"Remove From List",
-                   "required":false,
-                   "editable":true,
-                   "visible":true,
-                   "type":"checkbox",
-                   "name":"remove",
-                   "value": false,
-                   "tooltip":"The default action is Add to list, if this is checked the items will be removed instead",
-                   "description":"Removes the above item(s) from the Blacklist"
+                    "title": "Remove From List",
+                    "required": false,
+                    "editable": true,
+                    "visible": true,
+                    "type": "checkbox",
+                    "name": "remove",
+                    "value": false,
+                    "tooltip": "The default action is Add to list, if this is checked the items will be removed instead",
+                    "description": "Removes the above item(s) from the Blacklist"
                 },
                 {
                     "title": "Prevent Execution",
@@ -505,7 +1529,15 @@
                 }
             ],
             "category": "remediation",
-            "output_schema":{}
+            "output_schema":
+            {
+                "status": "Success",
+                "data":
+                {
+                    "outcome": "success",
+                    "data": true
+                }
+            }
         },
         {
             "operation": "whitelist_file",
@@ -526,19 +1558,27 @@
                     "name": "keys"
                 },
                 {
-                   "title":"Remove From List",
-                   "required":false,
-                   "editable":true,
-                   "visible":true,
-                   "type":"checkbox",
-                   "name":"remove",
-                   "value": false,
-                   "tooltip":"The default action is Add to list, if this is checked the items will be removed instead",
-                   "description":"Removes the above item(s) from the Whitelist"
+                    "title": "Remove From List",
+                    "required": false,
+                    "editable": true,
+                    "visible": true,
+                    "type": "checkbox",
+                    "name": "remove",
+                    "value": false,
+                    "tooltip": "The default action is Add to list, if this is checked the items will be removed instead",
+                    "description": "Removes the above item(s) from the Whitelist"
                 }
             ],
             "category": "remediation",
-            "output_schema":{}
+            "output_schema":
+            {
+                "status": "Success",
+                "data":
+                {
+                    "outcome": "success",
+                    "data": true
+                }
+            }
         },
         {
             "operation": "blacklist_ip_or_domain",
@@ -559,19 +1599,27 @@
                     "name": "keys"
                 },
                 {
-                   "title":"Remove From List",
-                   "required":false,
-                   "editable":true,
-                   "visible":true,
-                   "type":"checkbox",
-                   "name":"remove",
-                   "value": false,
-                   "tooltip":"The default action is Add to list, if this is checked the items will be removed instead",
-                   "description":"Removes the above item(s) from the Blacklist"
+                    "title": "Remove From List",
+                    "required": false,
+                    "editable": true,
+                    "visible": true,
+                    "type": "checkbox",
+                    "name": "remove",
+                    "value": false,
+                    "tooltip": "The default action is Add to list, if this is checked the items will be removed instead",
+                    "description": "Removes the above item(s) from the Blacklist"
                 }
             ],
             "category": "remediation",
-            "output_schema":{}
+            "output_schema":
+            {
+                "status": "Success",
+                "data":
+                {
+                    "outcome": "success",
+                    "data": true
+                }
+            }
         },
         {
             "operation": "whitelist_ip_or_domain",
@@ -592,19 +1640,27 @@
                     "name": "keys"
                 },
                 {
-                   "title":"Remove From List",
-                   "required":false,
-                   "editable":true,
-                   "visible":true,
-                   "type":"checkbox",
-                   "name":"remove",
-                   "value": false,
-                   "tooltip":"The default action is Add to list, if this is checked the items will be removed instead",
-                   "description":"Removes the above item(s) from the Whitelist"
+                    "title": "Remove From List",
+                    "required": false,
+                    "editable": true,
+                    "visible": true,
+                    "type": "checkbox",
+                    "name": "remove",
+                    "value": false,
+                    "tooltip": "The default action is Add to list, if this is checked the items will be removed instead",
+                    "description": "Removes the above item(s) from the Whitelist"
                 }
             ],
             "category": "remediation",
-            "output_schema":{}
+            "output_schema":
+            {
+                "status": "Success",
+                "data":
+                {
+                    "outcome": "success",
+                    "data": true
+                }
+            }
         }
     ],
     "category": "endpoint",
