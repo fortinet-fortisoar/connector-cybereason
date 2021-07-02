@@ -1,0 +1,1296 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - Cybereason - 1.0.0",
+      "description": "Sample playbooks for \"Cybereason\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "visible": true,
+      "image": "/api/3/images/0223800a-57d0-4a3c-a980-cdf004626427",
+      "uuid": "812dd81f-e361-498f-a806-43e4a1430bba",
+      "id": 159,
+      "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+      "createDate": 1624551093,
+      "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+      "modifyDate": 1624551093,
+      "recordTags": [],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Organization wide IP or Domain Blackist",
+          "aliasName": null,
+          "tag": null,
+          "description": "",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1624630267,
+          "collection": "/api/3/workflow_collections/812dd81f-e361-498f-a806-43e4a1430bba",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/140c262c-5142-4182-a78d-364fd1fc0215",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "85a411fc-dbc5-4492-982a-8ad085baf82f",
+                "resources": [
+                  "assets"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "140c262c-5142-4182-a78d-364fd1fc0215",
+              "id": 7402
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Blacklist Item",
+              "description": null,
+              "arguments": {
+                "name": "Cybereason",
+                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "params": {
+                  "keys": "192.0.2.124,domani.test",
+                  "remove": false
+                },
+                "version": "1.0.0",
+                "connector": "cybereason",
+                "operation": "blacklist_ip_or_domain",
+                "operationTitle": "Blacklist IP or Domain",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "7862805d-3a4a-46fb-9485-e5629915a488",
+              "id": 7401
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Sensors",
+              "targetStep": "/api/3/workflow_steps/7862805d-3a4a-46fb-9485-e5629915a488",
+              "sourceStep": "/api/3/workflow_steps/140c262c-5142-4182-a78d-364fd1fc0215",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "061a0074-bb86-4206-a09e-2290639fb52e"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "00f07096-ed30-43b8-a050-691fd72e15ef",
+          "recordTags": [],
+          "id": 1674,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1624630152,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1624630266,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Kill Process",
+          "aliasName": null,
+          "tag": null,
+          "description": "",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1624551093,
+          "collection": "/api/3/workflow_collections/812dd81f-e361-498f-a806-43e4a1430bba",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/8501509d-fe80-4958-901d-ea2d767aa24e",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Kill Process",
+              "description": null,
+              "arguments": {
+                "name": "Cybereason",
+                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "params": {
+                  "machine_guid": "27207767.1198775089551518743",
+                  "process_guid": "27207767.677186365172174101"
+                },
+                "version": "1.0.0",
+                "connector": "cybereason",
+                "operation": "kill_process",
+                "operationTitle": "Kill Process On Endpoint",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "1bc63bbe-66a0-4b51-82cc-ddaee421f50d",
+              "id": 7310
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "f77ebd18-3dca-4ea6-8897-ec6c2b42e1dc",
+                "resources": [
+                  "assets"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "8501509d-fe80-4958-901d-ea2d767aa24e",
+              "id": 7309
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Sensors",
+              "targetStep": "/api/3/workflow_steps/1bc63bbe-66a0-4b51-82cc-ddaee421f50d",
+              "sourceStep": "/api/3/workflow_steps/8501509d-fe80-4958-901d-ea2d767aa24e",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "574bd108-c38c-4e64-a691-aa9f50d8bdd3"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "0a6d6928-e20f-48b4-a10a-ccedf00fbfa1",
+          "recordTags": [],
+          "id": 1645,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1624551093,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1624551093,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Isolate Machine by its IP Address",
+          "aliasName": null,
+          "tag": null,
+          "description": "",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1624551093,
+          "collection": "/api/3/workflow_collections/812dd81f-e361-498f-a806-43e4a1430bba",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/662e547f-92cb-4b65-a9c7-0baffeedf235",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "fe6874e5-e6f5-4823-b4e2-0f9c70d3fb07",
+                "resources": [
+                  "assets"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "662e547f-92cb-4b65-a9c7-0baffeedf235",
+              "id": 7311
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Isolate Machine",
+              "description": null,
+              "arguments": {
+                "name": "Cybereason",
+                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "params": {
+                  "ip_addresses": "192.168.253.222"
+                },
+                "version": "1.0.0",
+                "connector": "cybereason",
+                "operation": "isolate_sensor_by_ip",
+                "operationTitle": "Isolate Malop Machine by IP Address",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "f94ef4e6-c340-4083-b950-2719ccbedffc",
+              "id": 7312
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Sensors",
+              "targetStep": "/api/3/workflow_steps/f94ef4e6-c340-4083-b950-2719ccbedffc",
+              "sourceStep": "/api/3/workflow_steps/662e547f-92cb-4b65-a9c7-0baffeedf235",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "1dd9156b-fcba-43e9-b3ba-5af8d33f24fb"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "105d9387-b245-4be6-ab20-c3742ad81987",
+          "recordTags": [],
+          "id": 1646,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1624551093,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1624551093,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "UnIsolate Malop Machine by Pylum ID",
+          "aliasName": null,
+          "tag": null,
+          "description": "",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1624551093,
+          "collection": "/api/3/workflow_collections/812dd81f-e361-498f-a806-43e4a1430bba",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/4ac4f426-d465-4e37-929e-1f187c9acb11",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "85926e4b-f9fd-45a7-8ce4-94ea87573189",
+                "resources": [
+                  "assets"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "4ac4f426-d465-4e37-929e-1f187c9acb11",
+              "id": 7313
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "UnIsolate Machine",
+              "description": null,
+              "arguments": {
+                "name": "Cybereason",
+                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "params": {
+                  "pylumIds": "PYLUMCLIENT_DAEGU_DESKTOP-VHK6KSU_000C2918A4A8"
+                },
+                "version": "1.0.0",
+                "connector": "cybereason",
+                "operation": "unisolate_sensor_by_pylum_id",
+                "operationTitle": "Un-Isolate Malop Machine by Pylum ID",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "6a60c156-14fd-4055-83aa-764230d9d18f",
+              "id": 7314
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Sensors",
+              "targetStep": "/api/3/workflow_steps/6a60c156-14fd-4055-83aa-764230d9d18f",
+              "sourceStep": "/api/3/workflow_steps/4ac4f426-d465-4e37-929e-1f187c9acb11",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "f68dd736-08f6-4ebd-8507-0829bea32c4b"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "2341e338-d3ca-41f7-9aca-06c2c0d0eb55",
+          "recordTags": [],
+          "id": 1647,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1624551093,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1624551093,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Sensors",
+          "aliasName": null,
+          "tag": null,
+          "description": "Fetch Machine(s)",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1624551232,
+          "collection": "/api/3/workflow_collections/812dd81f-e361-498f-a806-43e4a1430bba",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/d3dec30b-20f3-4ad0-bdf3-c124fcf5ce0a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Sensors",
+              "description": null,
+              "arguments": {
+                "name": "Cybereason",
+                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "params": {
+                  "limit": 1,
+                  "offset": 0,
+                  "filter.guid": "-1582059822.1198775089551518743",
+                  "raw_filters": "",
+                  "sortDirection": "ASC",
+                  "filter.customTags": "",
+                  "filter.department": "",
+                  "filter.machineName": "",
+                  "filter.externalIpAddress": "",
+                  "filter.internalIpAddress": ""
+                },
+                "version": "1.0.0",
+                "connector": "cybereason",
+                "operation": "get_sensors",
+                "operationTitle": "Query Sensors",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "b49f5e1d-8dae-4690-944c-02c71f1e3f47",
+              "id": 7316
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "e2f2825f-e0f4-4b25-ac60-8b0cc41193cb",
+                "resources": [
+                  "assets"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "d3dec30b-20f3-4ad0-bdf3-c124fcf5ce0a",
+              "id": 7315
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Sensors",
+              "targetStep": "/api/3/workflow_steps/b49f5e1d-8dae-4690-944c-02c71f1e3f47",
+              "sourceStep": "/api/3/workflow_steps/d3dec30b-20f3-4ad0-bdf3-c124fcf5ce0a",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "31f3c218-d990-4f33-b7f1-e0b763802bb5"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "4a4586b9-1419-428b-a8b3-f581364ea562",
+          "recordTags": [],
+          "id": 1648,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1624551093,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1624551232,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Organization wide IP or Domain Whitelist",
+          "aliasName": null,
+          "tag": null,
+          "description": "",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1624630368,
+          "collection": "/api/3/workflow_collections/812dd81f-e361-498f-a806-43e4a1430bba",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/d53669c0-00d1-4f3d-94a1-c989938f68cc",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Whitelist Items",
+              "description": null,
+              "arguments": {
+                "name": "Cybereason",
+                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "params": {
+                  "keys": "63.3.1.1,domain.roc",
+                  "remove": false
+                },
+                "version": "1.0.0",
+                "connector": "cybereason",
+                "operation": "whitelist_ip_or_domain",
+                "operationTitle": "Whitelist IP or Domain",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "74297cb9-069b-4195-89e3-809adeacc78f",
+              "id": 7404
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "72312fbf-42e2-49a6-bd4f-1f1fd062ea99",
+                "resources": [
+                  "assets"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "d53669c0-00d1-4f3d-94a1-c989938f68cc",
+              "id": 7403
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Sensors",
+              "targetStep": "/api/3/workflow_steps/74297cb9-069b-4195-89e3-809adeacc78f",
+              "sourceStep": "/api/3/workflow_steps/d53669c0-00d1-4f3d-94a1-c989938f68cc",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "b46b9751-b672-4af0-a15a-f504445372af"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "5ae06140-a56e-4274-8cd8-3f2252598ad9",
+          "recordTags": [],
+          "id": 1675,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1624630277,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1624630368,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Incidents",
+          "aliasName": null,
+          "tag": null,
+          "description": "Fetch Incidents for a specific time range",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1624630480,
+          "collection": "/api/3/workflow_collections/812dd81f-e361-498f-a806-43e4a1430bba",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/5a2c3569-9abd-441d-bf95-0e0a2a228402",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Incidents",
+              "description": null,
+              "arguments": {
+                "name": "Cybereason",
+                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "params": {
+                  "end_time": "{{arrow.utcnow().format(\"YYYY-MM-DDTHH:mm:ss.SSS\")}}Z",
+                  "start_time": "{{arrow.utcnow().shift(hours=-24).format(\"YYYY-MM-DDTHH:mm:ss.SSS\")}}Z"
+                },
+                "version": "1.0.0",
+                "connector": "cybereason",
+                "operation": "get_malops",
+                "operationTitle": "Get Incidents",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "35607418-cb36-40c8-81c3-173017d98874",
+              "id": 7317
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "40bb06a8-2892-4bbe-ba94-b96b74b012ef",
+                "resources": [
+                  "assets"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "5a2c3569-9abd-441d-bf95-0e0a2a228402",
+              "id": 7318
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Sensors",
+              "targetStep": "/api/3/workflow_steps/35607418-cb36-40c8-81c3-173017d98874",
+              "sourceStep": "/api/3/workflow_steps/5a2c3569-9abd-441d-bf95-0e0a2a228402",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "26e26897-2678-4f6b-9f8d-51333b6f82c6"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "8c68e4f3-8017-449d-8842-ef4a40a0adf7",
+          "recordTags": [],
+          "id": 1649,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1624551093,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1624630480,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Organization wide File Whitelist",
+          "aliasName": null,
+          "tag": null,
+          "description": "",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1624630389,
+          "collection": "/api/3/workflow_collections/812dd81f-e361-498f-a806-43e4a1430bba",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/a3f60258-e3c8-4089-ba4d-98fe88b2e306",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Whitelist Items",
+              "description": null,
+              "arguments": {
+                "name": "Cybereason",
+                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "params": {
+                  "keys": "17196c5a1d766c79e16c7cef9c020480f72efe67",
+                  "remove": false
+                },
+                "version": "1.0.0",
+                "connector": "cybereason",
+                "operation": "whitelist_file",
+                "operationTitle": "Whitelist File",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "8629379a-6e01-4b3b-b113-d05c48be79ea",
+              "id": 7405
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "32a625fc-c731-49b9-b1ab-3ab7328f6990",
+                "resources": [
+                  "assets"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "a3f60258-e3c8-4089-ba4d-98fe88b2e306",
+              "id": 7406
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Sensors",
+              "targetStep": "/api/3/workflow_steps/8629379a-6e01-4b3b-b113-d05c48be79ea",
+              "sourceStep": "/api/3/workflow_steps/a3f60258-e3c8-4089-ba4d-98fe88b2e306",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "204bbebd-b5a9-4c93-9bc0-472617890d78"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "97a821fb-6e8f-4baa-8c78-62fb932c5c88",
+          "recordTags": [],
+          "id": 1676,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1624630277,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1624630388,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Organization wide File Blackist",
+          "aliasName": null,
+          "tag": null,
+          "description": "Isolate file via its hashcode and prevent its execution",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1624630574,
+          "collection": "/api/3/workflow_collections/812dd81f-e361-498f-a806-43e4a1430bba",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/626b6a36-2cf4-433b-8b87-3b8bc9ae78d5",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Blacklist Item",
+              "description": null,
+              "arguments": {
+                "name": "Cybereason",
+                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "params": {
+                  "keys": "17196c5a1d766c79e16c7cef9c020480f72efe67",
+                  "remove": false,
+                  "prevent": true
+                },
+                "version": "1.0.0",
+                "connector": "cybereason",
+                "operation": "blacklist_file",
+                "operationTitle": "Blacklist File",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "6240f7e6-b0ec-4e4f-aaf2-6f9c912b831b",
+              "id": 7334
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "977c4412-d433-412d-a4a1-55ed537bcf6a",
+                "resources": [
+                  "assets"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "626b6a36-2cf4-433b-8b87-3b8bc9ae78d5",
+              "id": 7335
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Sensors",
+              "targetStep": "/api/3/workflow_steps/6240f7e6-b0ec-4e4f-aaf2-6f9c912b831b",
+              "sourceStep": "/api/3/workflow_steps/626b6a36-2cf4-433b-8b87-3b8bc9ae78d5",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "8247c446-4785-4688-b0e2-68f6f1a48206"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "a8d14497-5cf8-4293-84d2-c926881ab7f1",
+          "recordTags": [],
+          "id": 1656,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1624551204,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1624630573,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get File by its Hashcode",
+          "aliasName": null,
+          "tag": null,
+          "description": "Search for a file via its hashcode",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1624630462,
+          "collection": "/api/3/workflow_collections/812dd81f-e361-498f-a806-43e4a1430bba",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/3b999ff2-6975-4ddd-8d22-860917ae43d8",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "89bb2515-ae41-491a-bb5b-4bf1af2dad3c",
+                "resources": [
+                  "assets"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "3b999ff2-6975-4ddd-8d22-860917ae43d8",
+              "id": 7320
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get File",
+              "description": null,
+              "arguments": {
+                "name": "Cybereason",
+                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "params": {
+                  "filter.filehash": "7a5536313e3e72eaacff8b4fd0a8ba8d19b2c96c"
+                },
+                "version": "1.0.0",
+                "connector": "cybereason",
+                "operation": "query_file",
+                "operationTitle": "Query File by its Hash",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "62145cc4-1102-470a-b134-97f6cd50439a",
+              "id": 7319
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Sensors",
+              "targetStep": "/api/3/workflow_steps/62145cc4-1102-470a-b134-97f6cd50439a",
+              "sourceStep": "/api/3/workflow_steps/3b999ff2-6975-4ddd-8d22-860917ae43d8",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "fcfa6bb3-a420-41dd-8bc5-21a8129b81fc"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "aa3f2407-13dd-49cd-a118-d3fb9ff8a379",
+          "recordTags": [],
+          "id": 1650,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1624551093,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1624630461,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "UnIsolate Machine by its IP Address",
+          "aliasName": null,
+          "tag": null,
+          "description": "",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1624551093,
+          "collection": "/api/3/workflow_collections/812dd81f-e361-498f-a806-43e4a1430bba",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/a8096de4-9fd7-4885-8e89-c4e6efefb59b",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "f61a1806-f84e-42e1-acb5-5751275a72a4",
+                "resources": [
+                  "assets"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "a8096de4-9fd7-4885-8e89-c4e6efefb59b",
+              "id": 7322
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Isolate Machine",
+              "description": null,
+              "arguments": {
+                "name": "Cybereason",
+                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "params": {
+                  "ip_addresses": "192.168.253.222"
+                },
+                "version": "1.0.0",
+                "connector": "cybereason",
+                "operation": "unisolate_sensor_by_ip",
+                "operationTitle": "Un-Isolate Malop Machine by IP Address",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "f6d72faf-48fe-4d77-8d32-2e9e8dd2cdae",
+              "id": 7321
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Sensors",
+              "targetStep": "/api/3/workflow_steps/f6d72faf-48fe-4d77-8d32-2e9e8dd2cdae",
+              "sourceStep": "/api/3/workflow_steps/a8096de4-9fd7-4885-8e89-c4e6efefb59b",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "2ecac2e2-aa55-4093-a646-902263353f00"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "ab59863c-adc3-4083-9051-127766de88c7",
+          "recordTags": [],
+          "id": 1651,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1624551093,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1624551093,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Isolate Malop Machine by Pylum ID",
+          "aliasName": null,
+          "tag": null,
+          "description": "",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1624551093,
+          "collection": "/api/3/workflow_collections/812dd81f-e361-498f-a806-43e4a1430bba",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/10dee381-1ccc-4751-a870-e6a480d8a2b5",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "3716f50a-ff9b-44bf-8f08-fcfd479d9fe6",
+                "resources": [
+                  "assets"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "10dee381-1ccc-4751-a870-e6a480d8a2b5",
+              "id": 7329
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Isolate Machine",
+              "description": null,
+              "arguments": {
+                "name": "Cybereason",
+                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "params": {
+                  "pylumIds": "PYLUMCLIENT_DAEGU_DESKTOP-VHK6KSU_000C2918A4A8"
+                },
+                "version": "1.0.0",
+                "connector": "cybereason",
+                "operation": "isolate_sensor_by_pylum_id",
+                "operationTitle": "Isolate Malop Machine by Pylum ID",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "c662c1de-00b4-4efc-aa16-9057ebb41ade",
+              "id": 7328
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Sensors",
+              "targetStep": "/api/3/workflow_steps/c662c1de-00b4-4efc-aa16-9057ebb41ade",
+              "sourceStep": "/api/3/workflow_steps/10dee381-1ccc-4751-a870-e6a480d8a2b5",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "3c4fe585-894f-46a6-aa72-da16624c1881"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "d662f36e-6945-43d7-9be8-8b9480ef4983",
+          "recordTags": [],
+          "id": 1653,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1624551093,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1624551093,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Process",
+          "aliasName": null,
+          "tag": null,
+          "description": "Search for a process via its attributes",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1624630499,
+          "collection": "/api/3/workflow_collections/812dd81f-e361-498f-a806-43e4a1430bba",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/87c4a1d3-6661-4de1-a383-93809664002a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Process",
+              "description": null,
+              "arguments": {
+                "name": "Cybereason",
+                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "cybereason",
+                "operation": "query_process",
+                "operationTitle": "Get Process On Endpoint",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "3833f045-7e28-454f-9fea-4e3a61cb01c5",
+              "id": 7331
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "ba5be277-8b35-4d9b-80b2-85ec84400b35",
+                "resources": [
+                  "assets"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "87c4a1d3-6661-4de1-a383-93809664002a",
+              "id": 7330
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Sensors",
+              "targetStep": "/api/3/workflow_steps/3833f045-7e28-454f-9fea-4e3a61cb01c5",
+              "sourceStep": "/api/3/workflow_steps/87c4a1d3-6661-4de1-a383-93809664002a",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "a3c5d22e-1c43-4e65-8290-c76ae90f8bfa"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "db7c122c-c6b2-4a25-b325-f69006797936",
+          "recordTags": [],
+          "id": 1654,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1624551093,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1624630499,
+          "owners": [],
+          "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get User",
+          "aliasName": null,
+          "tag": null,
+          "description": "Search for a User via its attributes",
+          "isActive": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1624630520,
+          "collection": "/api/3/workflow_collections/812dd81f-e361-498f-a806-43e4a1430bba",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/1332ab99-2bc7-4ef5-baa5-66d15e98610b",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "332416c0-07b9-464f-a2bc-0fde1eb6ec9e",
+                "resources": [
+                  "assets"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "1332ab99-2bc7-4ef5-baa5-66d15e98610b",
+              "id": 7332
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get User",
+              "description": null,
+              "arguments": {
+                "name": "Cybereason",
+                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "params": {
+                  "filter.username": ""
+                },
+                "version": "1.0.0",
+                "connector": "cybereason",
+                "operation": "query_user",
+                "operationTitle": "Query User",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "dc1b4eae-e552-4b42-b943-b030d43a9b18",
+              "id": 7333
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Sensors",
+              "targetStep": "/api/3/workflow_steps/dc1b4eae-e552-4b42-b943-b030d43a9b18",
+              "sourceStep": "/api/3/workflow_steps/1332ab99-2bc7-4ef5-baa5-66d15e98610b",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "bf3b68c8-8191-4103-870a-69aece15604a"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "ff95eba2-5d8d-40dc-b8a1-d9c214b7fb94",
+          "recordTags": [],
+          "id": 1655,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1624551093,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1624630520,
+          "owners": [],
+          "isPrivate": false
+        }
+      ]
+    }
+  ],
+  "exported_tags": []
+}
