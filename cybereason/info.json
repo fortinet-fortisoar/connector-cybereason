@@ -2,7 +2,7 @@
   "name": "cybereason",
   "version": "1.0.0",
   "label": "Cybereason",
-  "category": "",
+  "category": "Endpoint Security",
   "active": true,
   "cs_compatible": true,
   "system": false,
