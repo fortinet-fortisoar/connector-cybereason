@@ -1,9 +1,14 @@
+""" Copyright start
+  Copyright (C) 2008 - 2022 Fortinet Inc.
+  All rights reserved.
+  FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
+  Copyright end """
 from connectors.core.connector import Connector, get_logger, ConnectorError
 import json
 import copy
 import validators
 
-logger = get_logger('Cybereason')
+logger = get_logger('cybereason')
 
 # Global var
 DEFAULT_LIMIT = 100
@@ -15,36 +20,36 @@ DEFAULT_PER_FEATURE_LIMIT = 100
 DEFAULT_QUERY_TIMEOUT = 120000
 LAST_X_MINUTES = 10
 
-#Schemas
+# Schemas
 schemas = {
-    'query_sensors':{
-    'limit':DEFAULT_LIMIT,
-    'offset':DEFAULT_OFFSET,
-    'sortDirection':DEFAULT_SORT,
-    'filters':[]
+    'query_sensors': {
+        'limit': DEFAULT_LIMIT,
+        'offset': DEFAULT_OFFSET,
+        'sortDirection': DEFAULT_SORT,
+        'filters': []
     },
-    'simple_query_generic_attributes':{
-    'totalResultLimit': 200,
-    'perGroupLimit': 100,
-    'perFeatureLimit': 100,
-    'templateContext': 'SPECIFIC',
-    'queryTimeout': 120000
+    'simple_query_generic_attributes': {
+        'totalResultLimit': 200,
+        'perGroupLimit': 100,
+        'perFeatureLimit': 100,
+        'templateContext': 'SPECIFIC',
+        'queryTimeout': 120000
     },
-    'query_user':{
-        'queryPath':[
+    'query_user': {
+        'queryPath': [
             {
                 'requestedType': 'User',
                 'filters': [],
                 'isResult': True
             }
         ],
-        'customFields':[
-                'domain',
-                'ownerMachine',
-                'ownerOrganization.name',
-                'ownerOrganization',
-                'isLocalSystem',
-                'elementDisplayName'
+        'customFields': [
+            'domain',
+            'ownerMachine',
+            'ownerOrganization.name',
+            'ownerOrganization',
+            'isLocalSystem',
+            'elementDisplayName'
         ]
     },
     'query_file': {
@@ -60,7 +65,7 @@ schemas = {
             'ownerUser',
             'ownerMachine',
             'sha1String',
-            'signatureVerified','avRemediationStatus',
+            'signatureVerified', 'avRemediationStatus',
             'maliciousClassificationType',
             'createdTime',
             'modifiedTime',
@@ -74,47 +79,48 @@ schemas = {
             'isSigned'
         ]
     },
-    'query_process':{
-            "queryPath": [
+    'query_process': {
+        "queryPath": [
             {
                 "requestedType": "Process",
                 "filters": [],
                 "isResult": True
             }
-            ],
-            "customFields": [
-                "elementDisplayName",
-                "creationTime",
-                "endTime",
-                "commandLine",
-                "productType",
-                "children",
-                "parentProcess",
-                "ownerMachine",
-                "calculatedUser",
-                "imageFile",
-                "knownMalwareSuspicion",
-                "hasListeningConnection",
-                "scanningProcessSuspicion",
-                "tid",
-                "iconBase64",
-                "ransomwareAutoRemediationSuspended",
-                "executionPrevented",
-                "isWhiteListClassification",
-                "matchedWhiteListRuleIds"
-            ]
-        },
-    'white_blacklist':[
-                {
-                    "keys": [],
-                    "maliciousType": "blacklist",
-                    "prevent": False,
-                    "remove": False
-                }
+        ],
+        "customFields": [
+            "elementDisplayName",
+            "creationTime",
+            "endTime",
+            "commandLine",
+            "productType",
+            "children",
+            "parentProcess",
+            "ownerMachine",
+            "calculatedUser",
+            "imageFile",
+            "knownMalwareSuspicion",
+            "hasListeningConnection",
+            "scanningProcessSuspicion",
+            "tid",
+            "iconBase64",
+            "ransomwareAutoRemediationSuspended",
+            "executionPrevented",
+            "isWhiteListClassification",
+            "matchedWhiteListRuleIds"
         ]
+    },
+    'white_blacklist': [
+        {
+            "keys": [],
+            "maliciousType": "blacklist",
+            "prevent": False,
+            "remove": False
+        }
+    ]
 }
 
-#Utils
+
+# Utils
 def sensor_payload_builder(params):
     '''
     Build POST payload for sensors calls
@@ -123,19 +129,20 @@ def sensor_payload_builder(params):
     for param in params:
         if params[param] and param != 'operation':
             if 'filter.' in param:
-                value = params[param] if isinstance(params[param],str) else str(params[param])
-                payload['filters'].append({'fieldName': param.split('.')[1],'operator': 'Equals','values': [value]})
+                value = params[param] if isinstance(params[param], str) else str(params[param])
+                payload['filters'].append({'fieldName': param.split('.')[1], 'operator': 'Equals', 'values': [value]})
             elif 'raw_filters' == param:
                 payload['filters'].append(params[param])
             else:
                 payload[param] = params[param]
     return payload
 
+
 def simple_query_filter_builder(params):
     '''
     Build query filter
     '''
-    filters=[]
+    filters = []
     for param in params:
         if params[param] and param != 'operation':
             if 'filter.filehash' in param:
@@ -147,11 +154,12 @@ def simple_query_filter_builder(params):
                 filters.append(params[param])
     return filters
 
+
 def simple_query_builder(operation,
                          params,
                          per_group_limit=DEFAULT_PER_GROUP_LIMIT,
-                         per_feature_limit = DEFAULT_PER_FEATURE_LIMIT,
-                         total_results_limit = DEFAULT_TOTAL_RESULTS_LIMIT,
+                         per_feature_limit=DEFAULT_PER_FEATURE_LIMIT,
+                         total_results_limit=DEFAULT_TOTAL_RESULTS_LIMIT,
                          template_context='SPECIFIC'):
     '''
     Builds query's JSON body
@@ -174,6 +182,7 @@ def simple_query_builder(operation,
     finally:
         return query
 
+
 def resolve_hash_type(hash):
     '''
     lookup hash type
@@ -186,6 +195,7 @@ def resolve_hash_type(hash):
         logger.exception('Invalid Hash Code: {}'.format(hash))
         raise ConnectorError('Invalid Hash Code: {}'.format(hash))
 
+
 def white_blacklist_body_builder(params):
     '''
     Builds whitelist/blacklist operations JSON body
@@ -197,7 +207,7 @@ def white_blacklist_body_builder(params):
     payload = copy.deepcopy(schemas['white_blacklist'])
     keys = keys.split(',') if ',' in keys else [keys]
 
-    #Validators
+    # Validators
     for item in keys:
         if 'file' in operation:
             resolve_hash_type(item)

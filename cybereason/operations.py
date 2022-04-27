@@ -1,13 +1,16 @@
-""" Operations """
+""" Copyright start
+  Copyright (C) 2008 - 2022 Fortinet Inc.
+  All rights reserved.
+  FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
+  Copyright end """
 from .utils import *
 from connectors.core.connector import get_logger, ConnectorError
 
 import requests
-import logging
 import arrow
 import jmespath
 
-logger = get_logger('Cybereason')
+logger = get_logger('cybereason')
 
 class CybereasonMC(object):
     def __init__(self, config):
