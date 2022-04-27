@@ -4,9 +4,9 @@
     {
       "@type": "WorkflowCollection",
       "name": "Sample - Cybereason - 1.0.0",
-      "description": "Sample playbooks for \"Cybereason\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "description": "The Cybereason Defense Platform combines endpoint prevention, detection, and response all in one lightweight agent.",
       "visible": true,
-      "image": "/api/3/images/0223800a-57d0-4a3c-a980-cdf004626427",
+      "image": "cybereason_100x100.png",
       "uuid": "812dd81f-e361-498f-a806-43e4a1430bba",
       "id": 159,
       "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
@@ -21,7 +21,7 @@
           "name": "Organization wide IP or Domain Blackist",
           "aliasName": null,
           "tag": null,
-          "description": "",
+          "description": "Organization wide IP(s) and/or Domain(s) blacklist",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -97,7 +97,10 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "00f07096-ed30-43b8-a050-691fd72e15ef",
-          "recordTags": [],
+          "recordTags": [
+            "cybereason",
+            "Cybereason"
+          ],
           "id": 1674,
           "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
           "createDate": 1624630152,
@@ -112,7 +115,7 @@
           "name": "Kill Process",
           "aliasName": null,
           "tag": null,
-          "description": "",
+          "description": "Kill Process On Endpoint",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -188,7 +191,10 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "0a6d6928-e20f-48b4-a10a-ccedf00fbfa1",
-          "recordTags": [],
+          "recordTags": [
+            "cybereason",
+            "Cybereason"
+          ],
           "id": 1645,
           "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
           "createDate": 1624551093,
@@ -203,7 +209,7 @@
           "name": "Isolate Machine by its IP Address",
           "aliasName": null,
           "tag": null,
-          "description": "",
+          "description": "Isolates a machine via its IP Address",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -278,7 +284,10 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "105d9387-b245-4be6-ab20-c3742ad81987",
-          "recordTags": [],
+          "recordTags": [
+            "cybereason",
+            "Cybereason"
+          ],
           "id": 1646,
           "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
           "createDate": 1624551093,
@@ -293,7 +302,7 @@
           "name": "UnIsolate Malop Machine by Pylum ID",
           "aliasName": null,
           "tag": null,
-          "description": "",
+          "description": "Un-Isolates a machine or machines involved in a specific Malop",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -368,7 +377,10 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "2341e338-d3ca-41f7-9aca-06c2c0d0eb55",
-          "recordTags": [],
+          "recordTags": [
+            "cybereason",
+            "Cybereason"
+          ],
           "id": 1647,
           "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
           "createDate": 1624551093,
@@ -467,7 +479,10 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "4a4586b9-1419-428b-a8b3-f581364ea562",
-          "recordTags": [],
+          "recordTags": [
+            "cybereason",
+            "Cybereason"
+          ],
           "id": 1648,
           "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
           "createDate": 1624551093,
@@ -482,7 +497,7 @@
           "name": "Organization wide IP or Domain Whitelist",
           "aliasName": null,
           "tag": null,
-          "description": "",
+          "description": "Organization wide IP(s) and/or Domain(s) whitelist",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -558,7 +573,10 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "5ae06140-a56e-4274-8cd8-3f2252598ad9",
-          "recordTags": [],
+          "recordTags": [
+            "cybereason",
+            "Cybereason"
+          ],
           "id": 1675,
           "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
           "createDate": 1624630277,
@@ -649,7 +667,10 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "8c68e4f3-8017-449d-8842-ef4a40a0adf7",
-          "recordTags": [],
+          "recordTags": [
+            "cybereason",
+            "Cybereason"
+          ],
           "id": 1649,
           "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
           "createDate": 1624551093,
@@ -664,7 +685,7 @@
           "name": "Organization wide File Whitelist",
           "aliasName": null,
           "tag": null,
-          "description": "",
+          "description": "Organization wide file(s) hash(es) whitelist",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -740,7 +761,10 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "97a821fb-6e8f-4baa-8c78-62fb932c5c88",
-          "recordTags": [],
+          "recordTags": [
+            "cybereason",
+            "Cybereason"
+          ],
           "id": 1676,
           "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
           "createDate": 1624630277,
@@ -832,7 +856,10 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "a8d14497-5cf8-4293-84d2-c926881ab7f1",
-          "recordTags": [],
+          "recordTags": [
+            "cybereason",
+            "Cybereason"
+          ],
           "id": 1656,
           "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
           "createDate": 1624551204,
@@ -922,7 +949,10 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "aa3f2407-13dd-49cd-a118-d3fb9ff8a379",
-          "recordTags": [],
+          "recordTags": [
+            "cybereason",
+            "Cybereason"
+          ],
           "id": 1650,
           "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
           "createDate": 1624551093,
@@ -1012,7 +1042,10 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "ab59863c-adc3-4083-9051-127766de88c7",
-          "recordTags": [],
+          "recordTags": [
+            "cybereason",
+            "Cybereason"
+          ],
           "id": 1651,
           "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
           "createDate": 1624551093,
@@ -1102,7 +1135,10 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "d662f36e-6945-43d7-9be8-8b9480ef4983",
-          "recordTags": [],
+          "recordTags": [
+            "cybereason",
+            "Cybereason"
+          ],
           "id": 1653,
           "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
           "createDate": 1624551093,
@@ -1190,7 +1226,10 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "db7c122c-c6b2-4a25-b325-f69006797936",
-          "recordTags": [],
+          "recordTags": [
+            "cybereason",
+            "Cybereason"
+          ],
           "id": 1654,
           "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
           "createDate": 1624551093,
@@ -1280,7 +1319,10 @@
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "ff95eba2-5d8d-40dc-b8a1-d9c214b7fb94",
-          "recordTags": [],
+          "recordTags": [
+            "cybereason",
+            "Cybereason"
+          ],
           "id": 1655,
           "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
           "createDate": 1624551093,
@@ -1292,5 +1334,8 @@
       ]
     }
   ],
-  "exported_tags": []
+  "exported_tags": [
+    "cybereason",
+    "Cybereason"
+  ]
 }
