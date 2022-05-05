@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "label": "Cybereason",
   "category": "Endpoint Security",
-  "active": true,
   "cs_compatible": true,
-  "system": false,
-  "help_online": "",
+  "cs_approved": false,
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/cybereason/268/cybereason-v1-0-0",
   "description": "The Cybereason Defense Platform combines endpoint prevention, detection, and response all in one lightweight agent.",
   "publisher": "Community",
   "icon_small_name": "cybereason_32x32.png",
@@ -16,7 +15,7 @@
       {
         "title": "Server URL",
         "name": "server",
-        "description": "Cybereason Server IP",
+        "description": "IP of the Cybereason server to which you will connect and perform the automated operations.",
         "required": true,
         "editable": true,
         "visible": true,
@@ -27,7 +26,7 @@
       {
         "title": "Username",
         "name": "username",
-        "description": "Cybereason Username",
+        "description": "The username used to access the Cybereason server to which you will connect and perform the automated operations.",
         "required": true,
         "editable": true,
         "visible": true,
@@ -37,7 +36,7 @@
       {
         "title": "Password",
         "name": "password",
-        "description": "Cybereason Password",
+        "description": "The password used to access the Cybereason server to which you will connect and perform the automated operations.",
         "required": true,
         "editable": true,
         "visible": true,
@@ -49,7 +48,8 @@
         "required": false,
         "editable": true,
         "visible": true,
-        "type": "checkbox"
+        "type": "checkbox",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not."
       }
     ]
   },
@@ -57,7 +57,7 @@
     {
       "operation": "get_sensors",
       "title": "Query Sensors",
-      "description": "Sends a request to return details on all or a selected group of sensors",
+      "description": "Sends a request to return details on all or a selected group of sensors to Cybereason based on the input parameters you have specified.",
       "category": "investigation",
       "annotation": "get_sensors",
       "output_schema": {
@@ -171,7 +171,7 @@
           "name": "limit",
           "tooltip": "The number of returned items per page; set to 0 to get available data altogether (used for pagination)",
           "value": 50,
-          "description": "The number of returned items per page; set to 0 to get available data altogether (used for pagination)"
+          "description": "Specify the maximum number of items you want to return per page Specify 0 to get available data altogether. This parameter is used for pagination"
         },
         {
           "title": "Offset",
@@ -182,7 +182,7 @@
           "name": "offset",
           "value": 0,
           "tooltip": "The offset of the first item to return. Default: 0 Min: 0",
-          "description": "Index of the first item to return. Values supported are: Default: 0 Min: 0"
+          "description": "The offset value retrieves a subset of records that starts from the offset value. The offset works with the 'Limit' parameter, which determines how many records to retrieve starting from the offset. The default and minimum value supported is 0."
         },
         {
           "title": "Sort Direction",
@@ -196,7 +196,8 @@
           ],
           "name": "sortDirection",
           "value": "ASC",
-          "tooltip": "The order in which to receive results. Valid values are ASC (ascending) or DESC (descending)."
+          "tooltip": "The order in which to receive results. Valid values are ASC (ascending) or DESC (descending).",
+          "description": "Select the direction in which you want to sort the results of this operation. You can choose between ASC (Ascending) or DESC(descending)."
         },
         {
           "title": "Machine Name",
@@ -206,7 +207,7 @@
           "type": "text",
           "name": "filter.machineName",
           "value": "",
-          "description": "Filter by machine name"
+          "description": "Specify the machine name based on which you want to filter the results of this operation."
         },
         {
           "title": "Machine GUID",
@@ -216,7 +217,7 @@
           "type": "text",
           "name": "filter.guid",
           "value": "",
-          "description": "Filter by the The globally unique sensor identifier"
+          "description": "Specify the globally unique sensor identifier based on which you want to filter the results of this operation."
         },
         {
           "title": "External IP Address",
@@ -226,7 +227,7 @@
           "type": "text",
           "name": "filter.externalIpAddress",
           "value": "",
-          "description": "Filter by the WAN IP address of the machine"
+          "description": "Specify the WAN IP address of the machine name based on which you want to filter the results of this operation."
         },
         {
           "title": "Internal IP Address",
@@ -236,7 +237,7 @@
           "type": "text",
           "name": "filter.internalIpAddress",
           "value": "",
-          "description": "Filter by the LAN IP address of the machine"
+          "description": "Specify the LAN IP address of the machine name based on which you want to filter the results of this operation."
         },
         {
           "title": "Custom Tags",
@@ -246,7 +247,7 @@
           "type": "text",
           "name": "filter.customTags",
           "value": "",
-          "description": "Filter by a list of custom sensor tags assigned to the machine"
+          "description": "Specify a list of custom sensor tags assigned to the machine based on which you want to filter the results of this operation."
         },
         {
           "title": "Department",
@@ -256,7 +257,7 @@
           "type": "text",
           "name": "filter.department",
           "value": "",
-          "description": "Filter by the value assigned to the machine for the DEPARTMENT sensor tag"
+          "description": "Specify the value assigned to the machine for the DEPARTMENT sensor tag based on which you want to filter the results of this operation."
         },
         {
           "title": "Custom Filters",
@@ -266,14 +267,14 @@
           "type": "text",
           "name": "raw_filters",
           "placeholder": "{\"fieldName\":\"osType\",\"operator\":\"Equals\",\"values\":[\"WINDOWS\",\"LINUX\"]}",
-          "description": "A comma separated list of filters, check documentation at https://nest.cybereason.com/documentation/api-documentation/all-versions/query-sensors"
+          "description": "Specify a comma-separated list of filters assigned to the machine based on which you want to filter the results of this operation. For more information, see https://nest.cybereason.com/documentation/api-documentation/all-versions/query-sensors."
         }
       ]
     },
     {
       "operation": "get_malops",
       "title": "Get Incidents",
-      "description": "Returns details about all Auto Hunt Malops and Endpoint Protection Malops (version:20.1.43+)",
+      "description": "Returns details about all Auto Hunt Malops and Endpoint Protection Malops (version:20.1.43+) from Cybereason based on the input parameters you have specified.",
       "category": "investigation",
       "annotation": "get_malops",
       "output_schema": {
@@ -536,7 +537,8 @@
           "visible": true,
           "type": "datetime",
           "name": "start_time",
-          "tooltip": "Time of the oldest data you want to get"
+          "tooltip": "Time of the oldest data you want to get",
+          "description": "Select the starting DateTime (oldest data) from when you want to retrieve data from Cybereason."
         },
         {
           "title": "End Time",
@@ -545,20 +547,21 @@
           "visible": true,
           "type": "datetime",
           "name": "end_time",
-          "tooltip": "Time of the most recent data you want to get"
+          "tooltip": "Time of the most recent data you want to get",
+          "description": "Select the ending DateTime (latest data) till when you want to retrieve data from Cybereason."
         }
       ]
     },
     {
       "operation": "query_user",
       "title": "Query User",
-      "description": "Get user details",
+      "description": "Searches for a user and retrieves details of the user from Cybereason based on the username you have specified.",
       "annotation": "query_user",
       "enabled": true,
       "parameters": [
         {
           "title": "Username",
-          "description": "Username to search for",
+          "description": "Specify the username that you want to search for on Cybereason and whose details you want to retrieve from Cybereason.",
           "required": false,
           "visible": true,
           "editable": true,
@@ -664,13 +667,13 @@
     {
       "operation": "query_file",
       "title": "Query File by its Hash",
-      "description": "Search for a file by its hash code",
+      "description": "Searches for a file and retrieves details of the file from Cybereason based on the file hash (SHA1 or MD5) you have specified.",
       "annotation": "query_file",
       "enabled": true,
       "parameters": [
         {
           "title": "File Hash",
-          "description": "File hash, md5 or sha1",
+          "description": "Specify the file hash, either in the MD5 or SHA1 format, that you want to search for on Cybereason and whose details you want to retrieve from Cybereason.",
           "required": true,
           "visible": true,
           "editable": true,
@@ -810,13 +813,13 @@
     {
       "operation": "query_process",
       "title": "Get Process On Endpoint",
-      "description": "Search for a process",
+      "description": "Searches for a process and retrieves details of the process from Cybereason based on the input parameters you have specified.",
       "annotation": "query_processes",
       "enabled": true,
       "parameters": [
         {
           "title": "Process Name",
-          "description": "Process Name",
+          "description": "Specify the name of the process that you want to search for on Cybereason and whose details you want to retrieve from Cybereason.",
           "required": false,
           "visible": true,
           "editable": true,
@@ -825,7 +828,7 @@
         },
         {
           "title": "User",
-          "description": "Filter by User",
+          "description": "Specify the user based on which you want to filter the results of this operation.",
           "required": false,
           "visible": true,
           "editable": true,
@@ -834,7 +837,7 @@
         },
         {
           "title": "Executed By",
-          "description": "The name of the process executing this process",
+          "description": "Specify the name of the process executing the process that you want to search for on Cybereason and whose details you want to retrieve from Cybereason.",
           "required": false,
           "visible": true,
           "editable": true,
@@ -843,7 +846,7 @@
         },
         {
           "title": "Machine Owner",
-          "description": "Name of the owner machine for this process",
+          "description": "Specify the owner machine of the process that you want to search for on Cybereason and whose details you want to retrieve from Cybereason.",
           "required": false,
           "visible": true,
           "editable": true,
@@ -852,7 +855,7 @@
         },
         {
           "title": "Parent Process",
-          "description": "The parent process of this process",
+          "description": "Specify the parent process of the process that you want to search for on Cybereason and whose details you want to retrieve from Cybereason.",
           "required": false,
           "visible": true,
           "editable": true,
@@ -861,7 +864,7 @@
         },
         {
           "title": "Has Outgoing Connection",
-          "description": "Filter by processes with outgoing connections",
+          "description": "Select this option to filter the results of this operation by processes with outgoing connections.",
           "required": false,
           "visible": true,
           "editable": true,
@@ -870,7 +873,7 @@
         },
         {
           "title": "From Temporary Folder",
-          "description": "Filter by processes running from temporary folder",
+          "description": "Select this option to filter the results of this operation by processes that arerun from a temporary folder.",
           "required": false,
           "visible": true,
           "editable": true,
@@ -885,7 +888,7 @@
           "type": "text",
           "name": "raw_filters",
           "placeholder": "{\"facetName\": \"hasOutgoingConnection\", \"values\":[true]}",
-          "description": "A comma separated list of filters, check documentation at https://nest.cybereason.com/documentation/api-documentation/all-versions/query-elements-and-features"
+          "description": "Specify a comma-separated list of filters assigned to the machine based on which you want to filter the results of this operation. For more information, see https://nest.cybereason.com/documentation/api-documentation/all-versions/query-elements-and-features."
         }
       ],
       "category": "remediation",
@@ -1031,13 +1034,13 @@
     {
       "operation": "isolate_sensor_by_pylum_id",
       "title": "Isolate Malop Machine by Pylum ID",
-      "description": "Isolates a machine or machines involved in a specific Malop",
+      "description": "Isolates a machine or machines involved in a specific Malop on Cybereason based on the Pylum ID you have specified.",
       "annotation": "isolate_sensor_by_pylum_id",
       "enabled": true,
       "parameters": [
         {
           "title": "Pylum ID(s)",
-          "description": "The unique sensor ID the Cybereason platform uses for the machines to isolate",
+          "description": "Specify the unique sensor ID the Cybereason platform uses to isolate machines.",
           "tooltip": "If you are entering multiple values, add a comma between each sensor ID",
           "required": true,
           "visible": true,
@@ -1055,13 +1058,13 @@
     {
       "operation": "unisolate_sensor_by_pylum_id",
       "title": "Un-Isolate Malop Machine by Pylum ID",
-      "description": "Un-Isolates a machine or machines involved in a specific Malop",
+      "description": "Un-Isolates a machine or machines involved in a specific Malopon Cybereason based on the Pylum ID you have specified.",
       "annotation": "unisolate_sensor_by_pylum_id",
       "enabled": true,
       "parameters": [
         {
           "title": "Pylum ID(s)",
-          "description": "The unique sensor ID the Cybereason platform uses for the machines to un-isolate",
+          "description": "Specify the unique sensor ID the Cybereason platform uses to un-isolate machines.",
           "tooltip": "If you are entering multiple values, add a comma between each sensor ID",
           "required": true,
           "visible": true,
@@ -1079,13 +1082,13 @@
     {
       "operation": "isolate_sensor_by_ip",
       "title": "Isolate Malop Machine by IP Address",
-      "description": "Isolates a machine via its IP Address",
+      "description": "Isolates a machine on Cybereason using the IP Address you have specified.",
       "annotation": "isolate_sensor_by_ip",
       "enabled": true,
       "parameters": [
         {
           "title": "Internal IP Address",
-          "description": "Internal IP Address of the sensor to block",
+          "description": "Specify the internal IP Address of the sensor that you want to isolate on Cybereason.",
           "tooltip": "If you are entering multiple values, add a comma between each IP",
           "required": true,
           "visible": true,
@@ -1103,13 +1106,13 @@
     {
       "operation": "unisolate_sensor_by_ip",
       "title": "Un-Isolate Malop Machine by IP Address",
-      "description": "Un-Isolates a machine via its IP Address",
+      "description": "Un-Isolates a machine on Cybereason using the IP Address you have specified.",
       "annotation": "unisolate_sensor_by_ip",
       "enabled": true,
       "parameters": [
         {
           "title": "Internal IP Address",
-          "description": "Internal IP Address of the sensor to un-isolate",
+          "description": "Specify the internal IP Address of the sensor that you want to un-isolate on Cybereason.",
           "tooltip": "If you are entering multiple values, add a comma between each IP",
           "required": true,
           "visible": true,
@@ -1127,13 +1130,13 @@
     {
       "operation": "kill_process",
       "title": "Kill Process On Endpoint",
-      "description": "Kill Process",
+      "description": "Terminates a specific process on a specific endpoint on Cybereason based on the process ID and machine GUID you have specified.",
       "annotation": "kill_process",
       "enabled": true,
       "parameters": [
         {
           "title": "Process GUID",
-          "description": "Process ID",
+          "description": "Specify the ID of the process IDyou want to terminate on Cybereason.",
           "required": true,
           "visible": true,
           "editable": true,
@@ -1143,7 +1146,7 @@
         },
         {
           "title": "Machine GUID",
-          "description": "GUID of the machine on which to kill the process",
+          "description": "GUID of the machine on which to terminate the specified process on Cybereason.",
           "required": true,
           "visible": true,
           "editable": true,
@@ -1174,13 +1177,13 @@
     {
       "operation": "blacklist_file",
       "title": "Blacklist File",
-      "description": "Organization wide file(s) hash(es) blacklist",
+      "description": "Creates an organization-wide blacklist file in Cybereason based on the file(s) hash(es) you have specified.",
       "annotation": "blacklist_file",
       "enabled": true,
       "parameters": [
         {
           "title": "File Hash",
-          "description": "A single MD5/SHA1 or a CSV list are accepted",
+          "description": "Specify a CSV list or single MD5 or SHA1 file hash to create the blacklist file in Cybereason.",
           "required": true,
           "visible": true,
           "editable": true,
@@ -1197,11 +1200,11 @@
           "name": "remove",
           "value": false,
           "tooltip": "The default action is Add to list, if this is checked the items will be removed instead",
-          "description": "Removes the above item(s) from the Blacklist"
+          "description": "Select this option to remove the specified file hash (es) from the blacklist."
         },
         {
           "title": "Prevent Execution",
-          "description": "Indicates whether to prevent the file’s execution with Application Control",
+          "description": "Select this option to prevent the specified file hash (es) execution with Application Control.",
           "required": false,
           "visible": true,
           "editable": true,
@@ -1220,13 +1223,13 @@
     {
       "operation": "whitelist_file",
       "title": "Whitelist File",
-      "description": "Organization wide file(s) hash(es) whitelist",
+      "description": "Creates an organization-wide whitelist file in Cybereason based on the file(s) hash(es) you have specified.",
       "annotation": "whitelist_file",
       "enabled": true,
       "parameters": [
         {
           "title": "File Hash",
-          "description": "A single MD5/SHA1 or a CSV list are accepted",
+          "description": "Specify a CSV list or single MD5 or SHA1 file hash to create the whitelist file in Cybereason.",
           "required": true,
           "visible": true,
           "editable": true,
@@ -1243,7 +1246,7 @@
           "name": "remove",
           "value": false,
           "tooltip": "The default action is Add to list, if this is checked the items will be removed instead",
-          "description": "Removes the above item(s) from the Whitelist"
+          "description": "Select this option to remove the specified file hash (es) from the whitelist."
         }
       ],
       "category": "remediation",
@@ -1255,13 +1258,13 @@
     {
       "operation": "blacklist_ip_or_domain",
       "title": "Blacklist IP or Domain",
-      "description": "Organization wide IP(s) and/or Domain(s) blacklist",
+      "description": "Creates an organization-wide blacklist file in Cybereason based on the IP addresses or domains you have specified.",
       "annotation": "blacklist_ip_or_domain",
       "enabled": true,
       "parameters": [
         {
           "title": "IPs or Domains",
-          "description": "A single IP/Domain or a CSV list them",
+          "description": "Specify a CSV list or single IP address or domain to create the IP or domain blacklist in Cybereason.",
           "required": true,
           "visible": true,
           "editable": true,
@@ -1278,7 +1281,7 @@
           "name": "remove",
           "value": false,
           "tooltip": "The default action is Add to list, if this is checked the items will be removed instead",
-          "description": "Removes the above item(s) from the Blacklist"
+          "description": "Select this option to remove the specified IP address or domain from the blacklist."
         }
       ],
       "category": "remediation",
@@ -1290,13 +1293,13 @@
     {
       "operation": "whitelist_ip_or_domain",
       "title": "Whitelist IP or Domain",
-      "description": "Organization wide IP(s) and/or Domain(s) whitelist",
+      "description": "Creates an organization-wide whitelist file in Cybereason based on the IP addresses or domains you have specified.",
       "annotation": "whitelist_ip_or_domain",
       "enabled": true,
       "parameters": [
         {
           "title": "IPs or Domains",
-          "description": "A single IP/Domain or a CSV list them",
+          "description": "Specify a CSV list or single IP address or domain to create the IP or domain whitelist in Cybereason.",
           "required": true,
           "visible": true,
           "editable": true,
@@ -1313,7 +1316,7 @@
           "name": "remove",
           "value": false,
           "tooltip": "The default action is Add to list, if this is checked the items will be removed instead",
-          "description": "Removes the above item(s) from the Whitelist"
+          "description": "Select this option to remove the specified IP address or domain from the whitelist."
         }
       ],
       "category": "remediation",

@@ -21,7 +21,7 @@
           "name": "Organization wide IP or Domain Blackist",
           "aliasName": null,
           "tag": null,
-          "description": "Organization wide IP(s) and/or Domain(s) blacklist",
+          "description": "Creates an organization-wide blacklist file in Cybereason based on the IP addresses or domains you have specified.",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -64,7 +64,7 @@
               "description": null,
               "arguments": {
                 "name": "Cybereason",
-                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "config": "",
                 "params": {
                   "keys": "192.0.2.124,domani.test",
                   "remove": false
@@ -115,7 +115,7 @@
           "name": "Kill Process",
           "aliasName": null,
           "tag": null,
-          "description": "Kill Process On Endpoint",
+          "description": "Terminates a specific process on a specific endpoint on Cybereason based on the process ID and machine GUID you have specified.",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -132,7 +132,7 @@
               "description": null,
               "arguments": {
                 "name": "Cybereason",
-                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "config": "",
                 "params": {
                   "machine_guid": "27207767.1198775089551518743",
                   "process_guid": "27207767.677186365172174101"
@@ -206,7 +206,7 @@
         {
           "@type": "Workflow",
           "triggerLimit": null,
-          "name": "Isolate Machine by its IP Address",
+          "name": "Isolates a machine on Cybereason using the IP Address you have specified.",
           "aliasName": null,
           "tag": null,
           "description": "Isolates a machine via its IP Address",
@@ -252,7 +252,7 @@
               "description": null,
               "arguments": {
                 "name": "Cybereason",
-                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "config": "",
                 "params": {
                   "ip_addresses": "192.168.253.222"
                 },
@@ -302,7 +302,7 @@
           "name": "UnIsolate Malop Machine by Pylum ID",
           "aliasName": null,
           "tag": null,
-          "description": "Un-Isolates a machine or machines involved in a specific Malop",
+          "description": "Un-Isolates a machine or machines involved in a specific Malopon Cybereason based on the Pylum ID you have specified.",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -345,7 +345,7 @@
               "description": null,
               "arguments": {
                 "name": "Cybereason",
-                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "config": "",
                 "params": {
                   "pylumIds": "PYLUMCLIENT_DAEGU_DESKTOP-VHK6KSU_000C2918A4A8"
                 },
@@ -395,7 +395,7 @@
           "name": "Get Sensors",
           "aliasName": null,
           "tag": null,
-          "description": "Fetch Machine(s)",
+          "description": "Sends a request to return details on all or a selected group of sensors to Cybereason based on the input parameters you have specified.",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -412,7 +412,7 @@
               "description": null,
               "arguments": {
                 "name": "Cybereason",
-                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "config": "",
                 "params": {
                   "limit": 1,
                   "offset": 0,
@@ -497,7 +497,7 @@
           "name": "Organization wide IP or Domain Whitelist",
           "aliasName": null,
           "tag": null,
-          "description": "Organization wide IP(s) and/or Domain(s) whitelist",
+          "description": "Creates an organization-wide whitelist file in Cybereason based on the IP addresses or domains you have specified.",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -514,7 +514,7 @@
               "description": null,
               "arguments": {
                 "name": "Cybereason",
-                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "config": "",
                 "params": {
                   "keys": "63.3.1.1,domain.roc",
                   "remove": false
@@ -591,7 +591,7 @@
           "name": "Get Incidents",
           "aliasName": null,
           "tag": null,
-          "description": "Fetch Incidents for a specific time range",
+          "description": "Returns details about all Auto Hunt Malops and Endpoint Protection Malops (version:20.1.43+) from Cybereason based on the input parameters you have specified.",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -608,7 +608,7 @@
               "description": null,
               "arguments": {
                 "name": "Cybereason",
-                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "config": "",
                 "params": {
                   "end_time": "{{arrow.utcnow().format(\"YYYY-MM-DDTHH:mm:ss.SSS\")}}Z",
                   "start_time": "{{arrow.utcnow().shift(hours=-24).format(\"YYYY-MM-DDTHH:mm:ss.SSS\")}}Z"
@@ -685,7 +685,7 @@
           "name": "Organization wide File Whitelist",
           "aliasName": null,
           "tag": null,
-          "description": "Organization wide file(s) hash(es) whitelist",
+          "description": "Creates an organization-wide whitelist file in Cybereason based on the file(s) hash(es) you have specified.",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -702,7 +702,7 @@
               "description": null,
               "arguments": {
                 "name": "Cybereason",
-                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "config": "",
                 "params": {
                   "keys": "17196c5a1d766c79e16c7cef9c020480f72efe67",
                   "remove": false
@@ -779,7 +779,7 @@
           "name": "Organization wide File Blackist",
           "aliasName": null,
           "tag": null,
-          "description": "Isolate file via its hashcode and prevent its execution",
+          "description": "Creates an organization-wide blacklist file in Cybereason based on the file(s) hash(es) you have specified.",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -796,7 +796,7 @@
               "description": null,
               "arguments": {
                 "name": "Cybereason",
-                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "config": "",
                 "params": {
                   "keys": "17196c5a1d766c79e16c7cef9c020480f72efe67",
                   "remove": false,
@@ -874,7 +874,7 @@
           "name": "Get File by its Hashcode",
           "aliasName": null,
           "tag": null,
-          "description": "Search for a file via its hashcode",
+          "description": "Searches for a file and retrieves details of the file from Cybereason based on the file hash (SHA1 or MD5) you have specified.",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -917,7 +917,7 @@
               "description": null,
               "arguments": {
                 "name": "Cybereason",
-                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "config": "",
                 "params": {
                   "filter.filehash": "7a5536313e3e72eaacff8b4fd0a8ba8d19b2c96c"
                 },
@@ -967,7 +967,7 @@
           "name": "UnIsolate Machine by its IP Address",
           "aliasName": null,
           "tag": null,
-          "description": "",
+          "description": "Un-Isolates a machine on Cybereason using the IP Address you have specified.",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -1010,7 +1010,7 @@
               "description": null,
               "arguments": {
                 "name": "Cybereason",
-                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "config": "",
                 "params": {
                   "ip_addresses": "192.168.253.222"
                 },
@@ -1060,7 +1060,7 @@
           "name": "Isolate Malop Machine by Pylum ID",
           "aliasName": null,
           "tag": null,
-          "description": "",
+          "description": "Isolates a machine or machines involved in a specific Malop on Cybereason based on the Pylum ID you have specified.",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -1103,7 +1103,7 @@
               "description": null,
               "arguments": {
                 "name": "Cybereason",
-                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "config": "",
                 "params": {
                   "pylumIds": "PYLUMCLIENT_DAEGU_DESKTOP-VHK6KSU_000C2918A4A8"
                 },
@@ -1153,7 +1153,7 @@
           "name": "Get Process",
           "aliasName": null,
           "tag": null,
-          "description": "Search for a process via its attributes",
+          "description": "Searches for a process and retrieves details of the process from Cybereason based on the input parameters you have specified.",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -1170,7 +1170,7 @@
               "description": null,
               "arguments": {
                 "name": "Cybereason",
-                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "config": "",
                 "params": [],
                 "version": "1.0.0",
                 "connector": "cybereason",
@@ -1244,7 +1244,7 @@
           "name": "Get User",
           "aliasName": null,
           "tag": null,
-          "description": "Search for a User via its attributes",
+          "description": "Searches for a user and retrieves details of the user from Cybereason based on the username you have specified.",
           "isActive": false,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
@@ -1287,7 +1287,7 @@
               "description": null,
               "arguments": {
                 "name": "Cybereason",
-                "config": "d88b6929-235e-4543-abe3-d9fcc18f9b5f",
+                "config": "",
                 "params": {
                   "filter.username": ""
                 },
